@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
-
+    <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile Page</title>
-    <link rel="stylesheet" href="mycss_web.css"> <!-- Updated path for deployment -->
+    <title>My Profile Page with Bootstrap</title>
     
+    <!-- Local Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    
+    <!-- Custom Fonts and CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+    <link rel="stylesheet" href="mycss_web.css">
     <link rel="stylesheet" href="mycss_tablet.css" media="screen and (max-width: 800px)">
-                    <!-- new thing we didn't learn is background for page below-->
+    <link rel="stylesheet" href="styles.css"> 
+
+    <!-- Inline CSS -->
     <style>
-        .highlight{
+        .highlight {
             background-color: green;
         }
         body {
@@ -22,72 +28,176 @@
             background-attachment: fixed;
             background-color: #106408;
         }
+        .pfp {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+        .highlight-hobbies {
+            background-color: rgba(33, 111, 33, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+        }
     </style>
-    <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
 
-    <!-- Menu Section -->
-    <h1>Menu</h1>
-    <ul>
-        <li><a href="#profile">Profile Information</a></li>
-        <li><a href="#education">Education Summary</a></li>
-        <li><a href="#work">Work Experience</a></li>
-        <li><a href="#skills">Programming Skills</a></li>
-        <li><a href="#interests">General Interests</a></li>
-        <li><a href="#favorites">Favorite Media</a></li>
-        <li><a href="#websites">Favorite Websites</a></li>
-        <li><a href="#projects">My Projects</a></li>
-    </ul>
+    <!-- Navigation Bar (Bootstrap Element 1) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">TK's Profile</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Menu Links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#profile">Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#interests">Interests</a></li>
+                <li class="nav-item"><a class="nav-link" href="#favorites">Favorites</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <!-- Profile Info-->
-    <h2 id="profile">Profile Information</h2>
-    <p>Name: Thurman K. Patterson IV "TK"</p>
-    <img src="IMG_7664.jpeg" alt="Profile Picture" class="pfp">
-    
-    <h2 id="education">Education Summary</h2>
-    <p></p>
-    <ul>
-        <li><span class="highlight">Pursuing bachelor's Degree</span></li>
-        <li><span class="highlight">High School Diploma</span></li>
-    </ul>
+    <!-- Main Container -->
+    <div class="container mt-5">
 
-    <!-- Work Experience  -->
-    <h2 id="work">Work Experience</h2>
-    <p>Places I've worked.</p>
-    <ul>
-        <li>18 months retail</li>
-        <li>2 years of sales and reception at a gym</li>
-    </ul>
+        <!-- Profile Information -->
+        <div class="row" id="profile">
+            <div class="col-md-4 text-center">
+                <img src="IMG_7664.jpeg" alt="Profile Picture" class="pfp img-fluid">
+            </div>
+            <div class="col-md-8">
+                <h2>Profile Information</h2>
+                <p>Name: <strong>Thurman K. Patterson IV "TK"</strong></p>
+            </div>
+        </div>
 
-    <!-- Programming Skills -->
-    <h2 id="skills">Programming Skills</h2>
-    <ul>
-        <li>HTML - Beginner</li>
-        <li>Java - Intermediate</li>
-    </ul>
+        <!-- Education Summary -->
+        <div class="row mt-5" id="education">
+            <div class="col">
+                <h2>Education Summary</h2>
+                <ul class="list-group">
+                    <li class="list-group-item highlight">Pursuing Bachelor's Degree</li>
+                    <li class="list-group-item highlight">High School Diploma</li>
+                </ul>
+            </div>
+        </div>
 
-    <!-- Interests -->
-    <h2 id="interests">General Interests and Hobbies</h2>
-    <div class="highlight-hobbies">
-        <p style="color: rgb(33, 111, 33);">I enjoy playing sports, photography, and reading.</p>
-    </div>
+        <!-- Work Experience -->
+        <div class="row mt-5" id="work">
+            <div class="col">
+                <h2>Work Experience</h2>
+                <p>Places I've worked:</p>
+                <ul class="list-group">
+                    <li class="list-group-item">18 months in retail</li>
+                    <li class="list-group-item">2 years of sales and reception at a gym</li>
+                </ul>
+            </div>
+        </div>
 
-    <!-- Favorite Song, TV show, movie-->
-    <h2 id="favorites">Favorite Media</h2>
-    
-    <p>Favorite Song:</p>
-    <iframe width="50%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1122053641&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-    <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-        <a href="https://soundcloud.com/temsbaby" title="Tems" target="_blank" style="color: #cccccc; text-decoration: none;">Tems</a> · 
-        <a href="https://soundcloud.com/temsbaby/found-feat-brent-faiyaz" title="Found (feat. Brent Faiyaz)" target="_blank" style="color: #cccccc; text-decoration: none;">Found (feat. Brent Faiyaz)</a>
-    </div>
+        <!-- Programming Skills -->
+        <div class="row mt-5" id="skills">
+            <div class="col">
+                <h2>Programming Skills</h2>
+                <!-- Progress Bars (Bootstrap Element 2) -->
+                <div class="mb-3">
+                    <label>HTML - Beginner</label>
+                    <div class="progress">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label>Java - Intermediate</label>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <p>Favorite Show:</p>
-    <iframe width="420" height="200" src="https://www.youtube.com/embed/hoJzibuefgU" title="Snowfall | Official Series Trailer | FX" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <!-- Interests -->
+        <div class="row mt-5" id="interests">
+            <div class="col">
+                <h2>General Interests and Hobbies</h2>
+                <div class="highlight-hobbies">
+                    <p style="color: rgb(33, 111, 33);">I enjoy playing sports, photography, and reading.</p>
+                </div>
+            </div>
+        </div>
 
-    <p>Favorite Movie:</p>
-    <iframe width="420" height="200" src="https://www.youtube.com/embed/Poc55U2RPMw" title="The Harder They Fall | Official Trailer | Netflix" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <!-- Favorite Media -->
+        <div class="row mt-5" id="favorites">
+            <div class="col">
+                <h2>Favorite Media</h2>
+                
+                <!-- Tabs (Bootstrap Element 3) -->
+                <ul class="nav nav-tabs" id="mediaTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="song-tab" data-toggle="tab" href="#song" role="tab" aria-controls="song" aria-selected="true">Favorite Song</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="show-tab" data-toggle="tab" href="#show" role="tab" aria-controls="show" aria-selected="false">Favorite Show</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="movie-tab" data-toggle="tab" href="#movie" role="tab" aria-controls="movie" aria-selected="false">Favorite Movie</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="mediaTabContent">
+                    <!-- Favorite Song -->
+                    <div class="tab-pane fade show active" id="song" role="tabpanel" aria-labelledby="song-tab">
+                        <div class="embed-responsive embed-responsive-16by9 mt-3">
+                            <iframe class="embed-responsive-item" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1122053641&color=%23ff5500&auto_play=false&visual=true"></iframe>
+                        </div>
+                    </div>
+                    <!-- Favorite Show -->
+                    <div class="tab-pane fade" id="show" role="tabpanel" aria-labelledby="show-tab">
+                        <div class="embed-responsive embed-responsive-16by9 mt-3">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/hoJzibuefgU" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <!-- Favorite Movie -->
+                    <div class="tab-pane fade" id="movie" role="tabpanel" aria-labelledby="movie-tab">
+                        <div class="embed-responsive embed-responsive-16by9 mt-3">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Poc55U2RPMw" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form (Bootstrap Element 4) -->
+        <div class="row mt-5">
+            <div class="col">
+                <h2>Contact Me</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email address:</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your message:</label>
+                        <textarea class="form-control" id="message" rows="3"></textarea>
+                    </div>
+                    <!-- Button (Bootstrap Element 5) -->
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="row mt-5">
+            <div class="col text-center">
+                <p>&copy; 2023 Thurman K. Patterson IV</p>
+            </div>
+        </footer>
+
+    </div> <!-- End of Container -->
+
+    <!-- Local Bootstrap JS -->
+    <script src="bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
