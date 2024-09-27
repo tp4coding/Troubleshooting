@@ -11,9 +11,11 @@
     
     <!-- Custom Fonts and CSS -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
-   <!-- <link rel="stylesheet" href="mycss_web.css">
+    <!--
+    <link rel="stylesheet" href="mycss_web.css">
     <link rel="stylesheet" href="mycss_tablet.css" media="screen and (max-width: 800px)">
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css">
+    -->
 
     <!-- Inline CSS -->
     <style>
@@ -40,20 +42,18 @@
         }
     </style>
 </head>
-    <!-- Include Bootstrap JS at the end of the body -->
-<script src="bootstrap.bundle.min.js"></script>
-
 <body>
 
     <!-- Navigation Bar (Bootstrap Element 1) -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">TK's Profile</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <!-- Menu Links -->
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#profile">Profile</a></li>
                 <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
                 <li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
@@ -136,36 +136,42 @@
             <div class="col">
                 <h2>Favorite Media</h2>
                 
-               <!-- Tabs (Bootstrap Element 3) -->
-<ul class="nav nav-tabs" id="mediaTab" role="tablist">
-    <li class="nav-item">
-        <a class="nav-link active" id="song-tab" data-bs-toggle="tab" href="#song" role="tab" aria-controls="song" aria-selected="true">Favorite Song</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="show-tab" data-bs-toggle="tab" href="#show" role="tab" aria-controls="show" aria-selected="false">Favorite Show</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" id="movie-tab" data-bs-toggle="tab" href="#movie" role="tab" aria-controls="movie" aria-selected="false">Favorite Movie</a>
-    </li>
-</ul>
+                <!-- Tabs (Bootstrap Element 3) -->
+                <ul class="nav nav-tabs" id="mediaTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="song-tab" data-bs-toggle="tab" href="#song" role="tab"
+                            aria-controls="song" aria-selected="true">Favorite Song</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="show-tab" data-bs-toggle="tab" href="#show" role="tab"
+                            aria-controls="show" aria-selected="false">Favorite Show</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="movie-tab" data-bs-toggle="tab" href="#movie" role="tab"
+                            aria-controls="movie" aria-selected="false">Favorite Movie</a>
+                    </li>
+                </ul>
 
                 <div class="tab-content" id="mediaTabContent">
                     <!-- Favorite Song -->
                     <div class="tab-pane fade show active" id="song" role="tabpanel" aria-labelledby="song-tab">
-                        <div class="embed-responsive embed-responsive-16by9 mt-3">
-                            <iframe class="embed-responsive-item" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1122053641&color=%23ff5500&auto_play=false&visual=true"></iframe>
+                        <div class="ratio ratio-16x9 mt-3">
+                            <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1122053641&color=%23ff5500&auto_play=false&visual=true"
+                                title="Favorite Song" allowfullscreen></iframe>
                         </div>
                     </div>
                     <!-- Favorite Show -->
                     <div class="tab-pane fade" id="show" role="tabpanel" aria-labelledby="show-tab">
-                        <div class="embed-responsive embed-responsive-16by9 mt-3">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/hoJzibuefgU" allowfullscreen></iframe>
+                        <div class="ratio ratio-16x9 mt-3">
+                            <iframe src="https://www.youtube.com/embed/hoJzibuefgU" title="Favorite Show"
+                                allowfullscreen></iframe>
                         </div>
                     </div>
                     <!-- Favorite Movie -->
                     <div class="tab-pane fade" id="movie" role="tabpanel" aria-labelledby="movie-tab">
-                        <div class="embed-responsive embed-responsive-16by9 mt-3">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Poc55U2RPMw" allowfullscreen></iframe>
+                        <div class="ratio ratio-16x9 mt-3">
+                            <iframe src="https://www.youtube.com/embed/Poc55U2RPMw" title="Favorite Movie"
+                                allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
@@ -177,19 +183,38 @@
             <div class="col">
                 <h2>Contact Me</h2>
                 <form>
-                    <div class="form-group">
-                        <label for="email">Email address:</label>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address:</label>
                         <input type="email" class="form-control" id="email" placeholder="name@example.com">
                     </div>
-                    <div class="form-group">
-                        <label for="message">Your message:</label>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Your message:</label>
                         <textarea class="form-control" id="message" rows="3"></textarea>
                     </div>
                     <!-- Button (Bootstrap Element 5) -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
+                        Submit
+                    </button>
                 </form>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Contact Form Submitted</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        Thank you for reaching out! I'll get back to you soon.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
         </div>
 
@@ -202,10 +227,8 @@
 
     </div> <!-- End of Container -->
 
-    <!-- Local Bootstrap JS -->
+    <!-- Include Bootstrap JS at the end of the body -->
     <script src="bootstrap.bundle.min.js"></script>
-     <!-- Include Bootstrap JS at the end of the body -->
-<script src="bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
